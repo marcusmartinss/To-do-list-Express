@@ -1,0 +1,22 @@
+{
+  "name": "to-do-list-express",
+  "version": "1.0.0",
+  "description": "Lista de tarefas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusmartinsxx/To-do-list-Express.git"
+  },
+  "author": "Marcus Martins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcusmartinsxx/To-do-list-Express/issues"
+  },
+  "homepage": "https://github.com/marcusmartinsxx/To-do-list-Express#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
