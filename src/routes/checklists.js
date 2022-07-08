@@ -1,4 +1,4 @@
-const express =  require('express');
+const express = require('express');
 
 const router = express.Router();
 
@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
     console.log(req.params.id);
     // automaticamente o express pega o que vem em :id e
     // preenche o objeto colocando em id
-    
+
     res.send(`ID: ${req.params.id}`);
     // responde com o id
 });
