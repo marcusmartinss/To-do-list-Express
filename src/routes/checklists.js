@@ -17,12 +17,22 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
     // dois pontos indica que um parametro 'id' esta sendo esperado
 
-    console.log(req.params.id);
+    console.log(req.body);
     // automaticamente o express pega o que vem em :id e
     // preenche o objeto colocando em id
 
     res.send(`ID: ${req.params.id}`);
     // responde com o id
+});
+
+router.put('/:id', (req, res) => {
+    console.log(req.body);
+    res.send(`PUT ID: ${req.params.id}`);
+});
+
+router.delete('/:id', (req, res) => {
+    console.log(req.body);
+    res.send(`DELETE ID: ${req.params.id}`);
 });
 
 module.exports = router;
