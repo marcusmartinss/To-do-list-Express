@@ -4,10 +4,13 @@ const router = express.Router();
 
 const Checklist = require('../models/checklist');
 
-router.get('/', (req, res) => {
-    console.log('Olá');
-    res.send(); 
-    // responde com o que foi enviado
+router.get('/', async (req, res) => {
+    try {
+        let checklists = await Checklist.find({});
+        res.status(200).json(checklists);
+    } catch (error) {
+        res.status(500).json(error)
+    }
 });
 
 router.post('/', async (req, res) => {
@@ -21,15 +24,15 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     // dois pontos indica que um parametro 'id' esta sendo esperado
 
-    console.log(req.body);
-    // automaticamente o express pega o que vem em :id e
-    // preenche o objeto colocando em id
-
-    res.send(`ID: ${req.params.id}`);
-    // responde com o id
+    try {
+        let checklist = await Checklist.findById(req.params.id);
+        res.status(200).json(checklist);
+    } catch (error) {
+        res.status(422).json(error);
+    }
 });
 
 router.put('/:id', (req, res) => {
