@@ -1,6 +1,11 @@
 const express = require('express');
 const checkListRouter = require('./src/routes/checklists');
 
+require('./config/database');
+// Como não está chamando em uma constante, assim que
+// o app começar a rodar, ele vai rodar o arquivo
+// do database completo no início
+
 const app = express();
 app.use(express.json());
 
