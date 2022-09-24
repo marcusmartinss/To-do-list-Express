@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const checklistSchema = mongo.Schema({
+const checklistSchema = mongoose.Schema({
     name: {type: String, required: true},
     tasks: [{
         type: mongoose.Schema.Types.ObjectId,
